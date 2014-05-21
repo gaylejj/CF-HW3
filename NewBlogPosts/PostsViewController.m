@@ -12,7 +12,7 @@
 #import "AdditionalPostsViewController.h"
 #import "UIColor+RandomColor.h"
 
-@interface PostsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface PostsViewController () <UITableViewDataSource, UITableViewDelegate, AdditionalPostsViewControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *arrayOfPosts;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -72,17 +72,11 @@
     [self performSegueWithIdentifier:@"EditPost" sender:self];
 }
 
--(IBAction)unwindToPosts:(UIStoryboardSegue *)segue
-{
-    NSLog(@"Unwind");
-    [_tableView reloadData];
-    NSLog(@"Unwind");
-}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     AdditionalPostsViewController *addPostVC = segue.destinationViewController;
-
+    addPostVC.delegate = self;
+    
     if ([segue.identifier isEqualToString:@"AddPost"]) {
         Post *newPost = [Post new];
         newPost.userName = @"New User";
@@ -97,6 +91,10 @@
     NSLog(@"Selected %@", addPostVC.additionalPost.userName);
 }
 
-
+- (void)postWasUpdated
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.tableView reloadData];
+}
 
 @end

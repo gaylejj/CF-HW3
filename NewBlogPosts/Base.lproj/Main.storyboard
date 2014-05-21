@@ -116,15 +116,16 @@
                     <navigationItem key="navigationItem" title="Add Post" id="fPo-cz-A9r">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wlX-ty-Eyf">
                             <connections>
-                                <segue destination="Z4W-IW-tDe" kind="unwind" unwindAction="unwindToPosts:" id="9ve-61-VMQ"/>
+                                <action selector="cancel:" destination="8dG-aY-gED" id="NcX-tR-OYL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ias-FP-3VL">
                             <connections>
-                                <segue destination="Z4W-IW-tDe" kind="unwind" unwindAction="unwindToPosts:" id="Rmj-kO-ZoX"/>
+                                <action selector="updatePost:" destination="8dG-aY-gED" id="gPf-o8-3Kb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cancelButton" destination="wlX-ty-Eyf" id="AwK-k1-6bT"/>
                         <outlet property="contentTextField" destination="Hzd-Ob-AZG" id="QLL-q6-0FP"/>
@@ -134,7 +135,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFL-Yp-4OD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Z4W-IW-tDe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="932" y="-667"/>
         </scene>
@@ -163,6 +163,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gj2-2l-PcF"/>
+        <segue reference="iWv-NB-EZv"/>
     </inferredMetricsTieBreakers>
 </document>
