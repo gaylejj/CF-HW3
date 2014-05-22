@@ -17,5 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel* postTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *postContentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *postNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *pictureImageView;
+
 
 @end

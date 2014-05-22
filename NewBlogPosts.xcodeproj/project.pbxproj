@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		250F8FE8192D5E5500E83FFB /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 250F8FE7192D5E5500E83FFB /* images.jpeg */; };
+		25A1AEFF192E9EB8001C31E0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A1AEFE192E9EB8001C31E0 /* AssetsLibrary.framework */; };
 		25C4CA3A19268916005618E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C4CA3919268916005618E1 /* Foundation.framework */; };
 		25C4CA3C19268916005618E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C4CA3B19268916005618E1 /* CoreGraphics.framework */; };
 		25C4CA3E19268916005618E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25C4CA3D19268916005618E1 /* UIKit.framework */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		250F8FE7192D5E5500E83FFB /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = SOURCE_ROOT; };
+		25A1AEFE192E9EB8001C31E0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		25C4CA3619268916005618E1 /* NewBlogPosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewBlogPosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C4CA3919268916005618E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		25C4CA3B19268916005618E1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A1AEFF192E9EB8001C31E0 /* AssetsLibrary.framework in Frameworks */,
 				25C4CA3C19268916005618E1 /* CoreGraphics.framework in Frameworks */,
 				25C4CA3E19268916005618E1 /* UIKit.framework in Frameworks */,
 				25C4CA3A19268916005618E1 /* Foundation.framework in Frameworks */,
@@ -113,6 +118,7 @@
 		25C4CA3819268916005618E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25A1AEFE192E9EB8001C31E0 /* AssetsLibrary.framework */,
 				25C4CA3919268916005618E1 /* Foundation.framework */,
 				25C4CA3B19268916005618E1 /* CoreGraphics.framework */,
 				25C4CA3D19268916005618E1 /* UIKit.framework */,
@@ -136,6 +142,7 @@
 		25C4CA4019268916005618E1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				250F8FE7192D5E5500E83FFB /* images.jpeg */,
 				25C4CA4819268916005618E1 /* PostsAppDelegate.h */,
 				25C4CA4919268916005618E1 /* PostsAppDelegate.m */,
 				25C4CA4119268916005618E1 /* NewBlogPosts-Info.plist */,
@@ -274,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25C4CA5219268916005618E1 /* Images.xcassets in Resources */,
+				250F8FE8192D5E5500E83FFB /* images.jpeg in Resources */,
 				25C4CA4419268916005618E1 /* InfoPlist.strings in Resources */,
 				25C4CA4D19268916005618E1 /* Main.storyboard in Resources */,
 			);

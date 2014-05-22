@@ -25,6 +25,7 @@
     self.postNameLabel.text = post.userName;
     self.postContentLabel.text = post.content;
     self.postTitleLabel.text = post.title;
+    self.pictureImageView.image = post.photo;
 }
 
 - (void)awakeFromNib
