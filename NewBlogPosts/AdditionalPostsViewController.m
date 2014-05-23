@@ -36,6 +36,8 @@
     self.nameTextField.text = self.additionalPost.userName;
     self.titleTextField.text = self.additionalPost.title;
     self.contentTextField.text = self.additionalPost.content;
+    _createImageView.layer.cornerRadius = _createImageView.frame.size.width / 2;
+    [_createImageView setClipsToBounds:YES];
     self.createImageView.image = self.additionalPost.photo;
 }
 
@@ -68,6 +70,7 @@
 {
     UIImagePickerController *picker = [UIImagePickerController new];
     
+    picker.delegate = self;
     picker.sourceType = sourceType;
     picker.allowsEditing = YES;
     [self presentViewController:picker animated:YES completion:nil];
@@ -116,14 +119,15 @@
 // Once finished picking an image, set the image equal to self.createImageView.image
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    
+    _createImageView.image = editedImage;
+    self.additionalPost.photo = editedImage;
+    
     [self dismissViewControllerAnimated:YES completion:^{
-        UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
-        self.createImageView.image = editedImage;
-        
-        _createImageView.image = editedImage;
-        _createImageView.layer.cornerRadius = _createImageView.frame.size.width / 2;
-        [_createImageView setClipsToBounds:YES];
-    }];
+        [self saveImageToLibrary:editedImage];
+            }];
+    NSLog(@"Image saved");
 }
 
 
