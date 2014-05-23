@@ -36,8 +36,8 @@
     self.nameTextField.text = self.additionalPost.userName;
     self.titleTextField.text = self.additionalPost.title;
     self.contentTextField.text = self.additionalPost.content;
-    _createImageView.layer.cornerRadius = _createImageView.frame.size.width / 2;
-    [_createImageView setClipsToBounds:YES];
+//    _createImageView.layer.cornerRadius = _createImageView.frame.size.width / 2;
+//    [_createImageView setClipsToBounds:YES];
     self.createImageView.image = self.additionalPost.photo;
 }
 
@@ -70,6 +70,7 @@
 {
     UIImagePickerController *picker = [UIImagePickerController new];
     
+    // Set picker delegate is important!!
     picker.delegate = self;
     picker.sourceType = sourceType;
     picker.allowsEditing = YES;

@@ -26,6 +26,8 @@
     self.postContentLabel.text = post.content;
     self.postTitleLabel.text = post.title;
     self.pictureImageView.image = post.photo;
+    self.pictureImageView.layer.cornerRadius = self.pictureImageView.frame.size.width / 2;
+    [self.pictureImageView setClipsToBounds:YES];
 }
 
 - (void)awakeFromNib
