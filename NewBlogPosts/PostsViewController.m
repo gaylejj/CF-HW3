@@ -28,7 +28,7 @@
     // Creating an array of 10 objects
     _arrayOfPosts = [[NSMutableArray alloc]init];
     
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 10; i++) {
         Post *post = [[Post alloc]initWithUserName:[NSString stringWithFormat:@"Jeff #%d", i] title:@"Title" content:@"Test Content" timeStamp:[NSDate date] image:[UIImage imageNamed:@"images.jpeg"]];
         [_arrayOfPosts addObject:post];
     }
