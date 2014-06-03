@@ -8,8 +8,9 @@
 
 #import "AdditionalPostsViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <MessageUI/MessageUI.h>
 
-@interface AdditionalPostsViewController () <UIImagePickerControllerDelegate, UIActionSheetDelegate>
+@interface AdditionalPostsViewController () <UIImagePickerControllerDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *contentTextField;
@@ -131,6 +132,49 @@
     NSLog(@"Image saved");
 }
 
+#pragma mark - MFMailComposeViewController
+
+- (IBAction)sendMail:(id)sender {
+    
+    if ([MFMailComposeViewController canSendMail]) {
+        [self sendMailComposed];
+    }
+    
+}
+
+- (void)sendMailComposed {
+    MFMailComposeViewController *mailCompose = [[MFMailComposeViewController alloc]init];
+    mailCompose.mailComposeDelegate = self;
+    NSData *picture = UIImageJPEGRepresentation(self.additionalPost.photo, 1.0);
+    
+    [mailCompose addAttachmentData:picture mimeType:@"image/jpeg" fileName:@"puppy picture"];
+    [mailCompose setSubject:@"title"];
+    [mailCompose setToRecipients:@[@"jeff.j.gayle@gmail.com"]];
+    [mailCompose setMessageBody:@"See this cute puppy!" isHTML:NO];
+    [self presentViewController:mailCompose animated:YES completion:NULL];
+    
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result) {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        default:
+            break;
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 
 

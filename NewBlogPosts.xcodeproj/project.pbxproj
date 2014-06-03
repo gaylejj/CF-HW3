@@ -27,6 +27,7 @@
 		25C4CA7619268A7C005618E1 /* PostsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C4CA7519268A7C005618E1 /* PostsTableViewCell.m */; };
 		25C4CA79192AA80B005618E1 /* AdditionalPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C4CA78192AA80B005618E1 /* AdditionalPostsViewController.m */; };
 		25C4CA7C192BE41C005618E1 /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C4CA7B192BE41C005618E1 /* UIColor+RandomColor.m */; };
+		25F2401E193E433200551D71 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25F2401D193E433200551D71 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		25C4CA78192AA80B005618E1 /* AdditionalPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdditionalPostsViewController.m; sourceTree = "<group>"; };
 		25C4CA7A192BE41C005618E1 /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RandomColor.h"; sourceTree = "<group>"; };
 		25C4CA7B192BE41C005618E1 /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RandomColor.m"; sourceTree = "<group>"; };
+		25F2401D193E433200551D71 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F2401E193E433200551D71 /* MessageUI.framework in Frameworks */,
 				25A1AEFF192E9EB8001C31E0 /* AssetsLibrary.framework in Frameworks */,
 				25C4CA3C19268916005618E1 /* CoreGraphics.framework in Frameworks */,
 				25C4CA3E19268916005618E1 /* UIKit.framework in Frameworks */,
@@ -118,6 +121,7 @@
 		25C4CA3819268916005618E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25F2401D193E433200551D71 /* MessageUI.framework */,
 				25A1AEFE192E9EB8001C31E0 /* AssetsLibrary.framework */,
 				25C4CA3919268916005618E1 /* Foundation.framework */,
 				25C4CA3B19268916005618E1 /* CoreGraphics.framework */,

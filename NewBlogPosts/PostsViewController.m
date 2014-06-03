@@ -32,7 +32,8 @@
         Post *post = [[Post alloc]initWithUserName:[NSString stringWithFormat:@"Jeff #%d", i] title:@"Title" content:@"Test Content" timeStamp:[NSDate date] image:[UIImage imageNamed:@"images.jpeg"]];
         [_arrayOfPosts addObject:post];
     }
-    
+//    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -106,6 +107,18 @@
 
 
     NSLog(@"Selected %@", addPostVC.additionalPost.userName);
+}
+
+// Swipe left to delete functionality
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [_arrayOfPosts removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
 }
 
 // AdditionalPostViewControllerDelegate - pop nav controller back, reload data in tableview
